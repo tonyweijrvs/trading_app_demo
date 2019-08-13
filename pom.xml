@@ -83,8 +83,8 @@
                         </goals>
                       </execution>
                     </executions>
-                  </plugin>-->
-      <plugin>
+	  </plugin>-->
+     <!--  <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <configuration>
           <descriptors>src/assembly/demo.xml</descriptors>
@@ -99,7 +99,7 @@
           </execution>
         </executions>
         <groupId>org.apache.maven.plugins</groupId>
-      </plugin>
+</plugin> -->
       <!--      <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-assembly-plugin</artifactId>
@@ -115,7 +115,23 @@
                   </goals>
                 </execution>
               </executions>
-            </plugin>-->
+	    </plugin>-->
+		<plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-assembly-plugin</artifactId>
+              <configuration>
+                <descriptors>src/assembly/elastic-beanstalk.xml</descriptors>
+                <finalName>trading-${pom.version}</finalName>
+              </configuration>
+              <executions>
+                <execution>
+                  <phase>package</phase>
+                  <goals>
+                    <goal>single</goal>
+                  </goals>
+                </execution>
+              </executions>
+            </plugin>
     </plugins>
   </build>
 
